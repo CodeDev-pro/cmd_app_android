@@ -4,31 +4,31 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/brand_black"
-    android:paddingHorizontal="25dp">
+    android:background="@color/light_white"
+    android:paddingHorizontal="20dp"
+    android:paddingTop="20dp">
 
     <ImageView
-        android:contentDescription="@string/cmd_logo"
-        android:layout_width="139dp"
-        android:layout_height="36dp"
-        android:src="@drawable/ic_cmd"
-        android:layout_marginTop="25dp"
-        android:id="@+id/cmd_logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        android:src="@drawable/ic_back_ios"
+        android:contentDescription="@string/app_name"
+        app:tint="@color/brand_black"
+        android:id="@+id/button_back"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/text_verify_header"
-        app:layout_constraintTop_toBottomOf="@id/cmd_logo"
+        app:layout_constraintTop_toBottomOf="@id/button_back"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="10dp"
         android:text="@string/email_verification"
-        android:fontFamily="@font/poppins_bold"
+        android:fontFamily="@font/poppins_medium"
         android:textSize="30sp"
-        android:textColor="@color/text_white"/>
+        android:textColor="@color/brand_black"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -42,21 +42,21 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/text_white"
+            android:textColor="@color/brand_black"
             android:textSize="18sp"
             android:text="@string/otp"
             android:fontFamily="@font/poppins_light"
             android:id="@+id/otp_label"/>
 
-        <com.google.android.material.textfield.TextInputEditText
+        <com.goodiebag.pinview.Pinview
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/background_text_field"
-            android:padding="10dp"
-            android:inputType="number"
-            android:textColor="@color/brand_black"
-            android:id="@+id/otp_text_field"
-            android:hint="@null"/>
+            app:pinWidth="40dp"
+            app:pinHeight="40dp"
+            app:inputType="number"
+            app:cursorVisible="true"
+            app:pinBackground="@drawable/background_pin"
+            app:pinLength="6"/>
 
     </LinearLayout>
 
@@ -75,7 +75,7 @@
             android:id="@+id/email_verification_text"
             android:fontFamily="@font/poppins_light"
             android:textSize="15sp"
-            android:textColor="@color/text_white"
+            android:textColor="@color/brand_black"
             android:text="@string/email_verification_text"
             android:padding="8dp"/>
 
@@ -92,7 +92,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:id="@+id/otp_error"
-                android:textColor="@color/text_white"
+                android:textColor="@color/brand_black"
                 android:text="@string/didn_t_receive_otp"
                 android:layout_marginTop="5dp"
                 android:layout_weight="1"

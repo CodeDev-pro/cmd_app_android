@@ -39,24 +39,24 @@ class SignUpFragment: Fragment(R.layout.fragment_signup) {
         super.onViewCreated(view, savedInstanceState)
         _binding = FragmentSignupBinding.bind(view)
 
-        viewLifecycleOwner.lifecycleScope.launchWhenStarted {
-            viewModel.uiEvents.collect {
-                when(it){
-                    SignupUiEvents.NoInternetConnection -> {
-                        makeAlertDialog(requireContext(), NO_INTERNET_CONNECTION).setTitle("Network").create().show()
-                    }
-                    is SignupUiEvents.Error -> {
-                        makeAlertDialog(requireContext(), it.error).setTitle("Error").create().show()
-                    }
-                    is SignupUiEvents.Success -> {
-                        val action = SignUpFragmentDirections.actionSignUpFragmentToOtpFragment(it.user.otp, it.user)
-                        findNavController().navigate(action)
-                    }
-                }
-            }
-        }
+//        viewLifecycleOwner.lifecycleScope.launchWhenStarted {
+//            viewModel.uiEvents.collect {
+//                when(it){
+//                    SignupUiEvents.NoInternetConnection -> {
+//                        makeAlertDialog(requireContext(), NO_INTERNET_CONNECTION).setTitle("Network").create().show()
+//                    }
+//                    is SignupUiEvents.Error -> {
+//                        makeAlertDialog(requireContext(), it.error).setTitle("Error").create().show()
+//                    }
+//                    is SignupUiEvents.Success -> {
+//                        val action = SignUpFragmentDirections.actionSignUpFragmentToOtpFragment(it.user.otp, it.user)
+//                        findNavController().navigate(action)
+//                    }
+//                }
+//            }
+//        }
 
-        binding.firstNameTextField.onChange {
+        /*binding.firstNameTextField.onChange {
             viewModel.execute(SignupEvents.FirstNameTextChange(it))
         }
 
@@ -98,7 +98,7 @@ class SignUpFragment: Fragment(R.layout.fragment_signup) {
                     phoneErrorText.handleError(it.phone.errorMessage, it.phone.valid)
                 }
             }
-        }
+        }*/
 
     }
 
@@ -108,36 +108,36 @@ class SignUpFragment: Fragment(R.layout.fragment_signup) {
     }
 }
 
-fun FragmentSignupBinding.loading(context: Context) {
-    this.apply {
-        signupButtonText.visibility = View.GONE
-        progressBar.visibility = View.VISIBLE
-        buttonSignup.isClickable = false
-        signInText.isClickable = false
-        buttonSignup.background = AppCompatResources.getDrawable(context, R.drawable.background_auth_button_loading)
-    }
+//fun FragmentSignupBinding.loading(context: Context) {
+//    this.apply {
+//        signupButtonText.visibility = View.GONE
+//        progressBar.visibility = View.VISIBLE
+//        buttonSignup.isClickable = false
+//        signInText.isClickable = false
+//        buttonSignup.background = AppCompatResources.getDrawable(context, R.drawable.background_auth_button_loading)
+//    }
+//
+//}
 
-}
+//fun FragmentSignupBinding.success(context: Context) {
+//    this.apply {
+//        signInText.isClickable = true
+//        signupButtonText.visibility = View.VISIBLE
+//        progressBar.visibility = View.GONE
+//        buttonSignup.isClickable = true
+//        buttonSignup.background = AppCompatResources.getDrawable(context, R.drawable.background_auth_button)
+//
+//    }
+//
+//}
 
-fun FragmentSignupBinding.success(context: Context) {
-    this.apply {
-        signInText.isClickable = true
-        signupButtonText.visibility = View.VISIBLE
-        progressBar.visibility = View.GONE
-        buttonSignup.isClickable = true
-        buttonSignup.background = AppCompatResources.getDrawable(context, R.drawable.background_auth_button)
-
-    }
-
-}
-
-fun FragmentSignupBinding.error(context: Context) {
-    this.apply {
-        signInText.isClickable = true
-        signupButtonText.visibility = View.VISIBLE
-        progressBar.visibility = View.GONE
-        buttonSignup.isClickable = true
-        buttonSignup.background = AppCompatResources.getDrawable(context, R.drawable.background_auth_button)
-    }
-}
+//fun FragmentSignupBinding.error(context: Context) {
+//    this.apply {
+//        signInText.isClickable = true
+//        signupButtonText.visibility = View.VISIBLE
+//        progressBar.visibility = View.GONE
+//        buttonSignup.isClickable = true
+//        buttonSignup.background = AppCompatResources.getDrawable(context, R.drawable.background_auth_button)
+//    }
+//}
 

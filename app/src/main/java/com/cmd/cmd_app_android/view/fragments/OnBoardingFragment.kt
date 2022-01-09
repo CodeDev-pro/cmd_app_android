@@ -15,9 +15,9 @@ class OnBoardingFragment:Fragment(R.layout.fragment_onboarding) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        view.findViewById<Button>(R.id.button).setOnClickListener {
+        /*view.findViewById<Button>(R.id.button).setOnClickListener {
             findNavController().navigate(R.id.action_onBoardingFragment_to_signInFragment)
-        }
+        }*/
     }
 
     override fun onStart() {

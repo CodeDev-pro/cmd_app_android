@@ -29,7 +29,7 @@ class SignInFragment : Fragment(R.layout.fragment_signin) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         _binding = FragmentSigninBinding.bind(view)
 
-        viewLifecycleOwner.lifecycleScope.launchWhenStarted {
+        /*viewLifecycleOwner.lifecycleScope.launchWhenStarted {
             viewModel.signInState.collectLatest {
                 if (it.loading) {
                     binding.loading(requireContext())
@@ -58,9 +58,9 @@ class SignInFragment : Fragment(R.layout.fragment_signin) {
 
         binding.emailTextField.onChange {
             viewModel.execute(SignInEvents.EmailTextChange(it))
-        }
+        }*/
 
-        binding.textForgotPassword.setOnClickListener {
+        /*binding.textForgotPassword.setOnClickListener {
             findNavController().navigate(R.id.action_signInFragment_to_emailValidationFragment)
         }
 
@@ -91,7 +91,7 @@ class SignInFragment : Fragment(R.layout.fragment_signin) {
                     }
                 }
             }
-        }
+        }*/
 
     }
 
@@ -100,6 +100,7 @@ class SignInFragment : Fragment(R.layout.fragment_signin) {
         _binding = null
     }
 }
+/*
 
 fun FragmentSigninBinding.loading(context: Context) {
     this.apply {
@@ -131,4 +132,4 @@ fun FragmentSigninBinding.error(context: Context) {
         buttonSignin.background =
             AppCompatResources.getDrawable(context, R.drawable.background_auth_button)
     }
-}
+}*/

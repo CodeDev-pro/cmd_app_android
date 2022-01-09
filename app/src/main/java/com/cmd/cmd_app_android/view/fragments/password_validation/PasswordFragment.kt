@@ -28,7 +28,7 @@ class PasswordFragment : Fragment(R.layout.fragment_password) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         _binding = FragmentPasswordBinding.bind(view)
 
-        lifecycleScope.launchWhenStarted {
+        /*lifecycleScope.launchWhenStarted {
             viewModel.uiEvents.collect {
                 when (it) {
                     is UiEvents.ChangedSuccessfully -> {
@@ -72,7 +72,7 @@ class PasswordFragment : Fragment(R.layout.fragment_password) {
                     )
                 }
             }
-        }
+        }*/
     }
 
     override fun onDestroyView() {
@@ -81,6 +81,7 @@ class PasswordFragment : Fragment(R.layout.fragment_password) {
     }
 }
 
+/*
 fun FragmentPasswordBinding.loading(context: Context) {
     this.apply {
         continueButtonText.visibility = View.GONE
@@ -111,4 +112,4 @@ fun FragmentPasswordBinding.error(context: Context) {
         buttonContinue.background =
             AppCompatResources.getDrawable(context, R.drawable.background_auth_button)
     }
-}
+}*/

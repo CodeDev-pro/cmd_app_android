@@ -44,4 +44,8 @@
     <string name="update_account">Update Account</string>
     <string name="update">Update</string>
     <string name="delete_account">Delete Account</string>
+    <string name="lorem_ipsum">lorem ipsum is simply a dummy test of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard</string>
+    <string name="title">A Tech Space of Vast Specialisations</string>
+    <string name="skip">Skip</string>
+    <string name="remember_me">Remember Me</string>
 </resources>

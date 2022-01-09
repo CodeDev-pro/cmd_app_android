@@ -1,240 +1,246 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/brand_black"
-    android:padding="25dp">
+    android:layout_height="match_parent">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/text_sigin_header"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="15dp"
-        android:text="@string/create_account"
-        android:fontFamily="@font/poppins_bold"
-        android:textSize="30sp"
-        android:textColor="@color/text_white"/>
-
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/text_sigin_header"
-        app:layout_constraintStart_toStartOf="parent"
-        android:orientation="vertical"
-        android:id="@+id/first_name_section"
-        android:layout_marginTop="17dp">
+        android:background="@color/light_white">
 
-        <TextView
-            android:layout_width="wrap_content"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:textColor="@color/text_white"
-            android:textSize="18sp"
-            android:text="@string/first_name"
-            android:fontFamily="@font/poppins_light"
-            android:id="@+id/first_name_label"/>
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:id="@+id/main_section"
+            app:layout_constraintTop_toTopOf="parent"
+            android:paddingHorizontal="20dp"
+            android:paddingTop="20dp">
 
-        <com.google.android.material.textfield.TextInputEditText
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:src="@drawable/ic_back_ios"
+                android:contentDescription="@string/app_name"
+                app:tint="@color/brand_black"
+                android:id="@+id/button_back"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/button_back"
+                android:text="@string/create_account"
+                android:textColor="@color/brand_black"
+                android:textSize="25sp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/poppins_medium"
+                app:layout_constraintStart_toStartOf="parent"
+                android:id="@+id/text_create_account"/>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/text_create_account"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="10dp"
+                android:id="@+id/first_name_section"
+                app:errorEnabled="true"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                app:hintEnabled="false">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:hint="@string/first_name"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/first_name_section"
+                android:layout_marginTop="5dp"
+                app:layout_constraintStart_toStartOf="parent"
+                android:id="@+id/last_name_section"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                app:errorEnabled="true"
+                app:hintEnabled="false">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:hint="@string/last_name"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/last_name_section"
+                app:layout_constraintStart_toStartOf="parent"
+                android:id="@+id/email_layout"
+                app:errorEnabled="true"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                app:hintEnabled="false">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textEmailAddress"
+                    android:hint="@string/email"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/email_layout"
+                app:layout_constraintStart_toStartOf="parent"
+                android:id="@+id/teck_track"
+                app:errorEnabled="true"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                app:hintEnabled="false">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textEmailAddress"
+                    android:hint="Teck Track(s)"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/teck_track"
+                android:layout_marginTop="5dp"
+                app:layout_constraintStart_toStartOf="parent"
+                android:id="@+id/password_layout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                app:errorEnabled="true"
+                app:passwordToggleEnabled="true"
+                app:hintEnabled="false">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPassword"
+                    android:hint="@string/password"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/password_layout"
+                android:layout_marginTop="5dp"
+                app:layout_constraintStart_toStartOf="parent"
+                android:id="@+id/retype_password_layout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                app:errorEnabled="true"
+                app:passwordToggleEnabled="true"
+                app:hintEnabled="false">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPassword"
+                    android:hint="@string/retype_new_password"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/retype_password_layout"
+                android:background="@drawable/background_auth_button"
+                app:layout_constraintBottom_toTopOf=""
+                android:padding="8dp"
+                android:id="@+id/button_signup">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/sign_up"
+                    android:textColor="@color/text_white"
+                    android:fontFamily="@font/poppins_bold"
+                    android:textSize="18sp"
+                    android:visibility="visible"
+                    android:id="@+id/signup_button_text"
+                    android:layout_centerInParent="true"/>
+
+                <ProgressBar
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:indeterminate="true"
+                    android:layout_centerInParent="true"
+                    android:visibility="gone"
+                    android:indeterminateTintMode="src_atop"
+                    android:indeterminateTint="@color/brand_yellow"
+                    android:id="@+id/progressBar"/>
+
+            </RelativeLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <include app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="25dp"
+            app:layout_constraintTop_toBottomOf="@id/main_section"
+            app:layout_constraintBottom_toTopOf="@id/new_to_cmd"
+            android:id="@+id/other_options"
+            android:layout_height="wrap_content"
             android:layout_width="match_parent"
+            layout="@layout/layout_auth_options"/>
+
+        <RelativeLayout
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:background="@drawable/background_text_field"
-            android:padding="10dp"
-            android:textColor="@color/brand_black"
-            android:id="@+id/first_name_text_field"
-            android:hint="@null"/>
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:id="@+id/new_to_cmd">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/first_name_error_text"
-            android:textColor="@color/error_red"
-            tools:text="Name is not valid"
-            android:layout_marginTop="5dp"
-            android:fontFamily="@font/poppins_medium"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/brand_black"
+                android:id="@+id/divider"/>
 
-    </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginVertical="15dp"
+                android:orientation="horizontal">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/first_name_section"
-        app:layout_constraintStart_toStartOf="parent"
-        android:orientation="vertical"
-        android:id="@+id/last_name_section"
-        android:layout_marginTop="5dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="New to CMD?"
+                    android:textColor="@color/brand_black"
+                    android:textSize="16sp"
+                    android:fontFamily="@font/poppins_semibold"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/text_white"
-            android:textSize="18sp"
-            android:text="@string/last_name"
-            android:fontFamily="@font/poppins_light"
-            android:id="@+id/last_name_label"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/sign_up"
+                    android:textColor="@color/brand_yellow"
+                    android:textSize="16sp"
+                    android:fontFamily="@font/poppins_semibold"/>
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/background_text_field"
-            android:padding="10dp"
-            android:textColor="@color/brand_black"
-            android:id="@+id/last_name_text_field"
-            android:hint="@null"/>
+            </LinearLayout>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/last_name_error_text"
-            android:textColor="@color/error_red"
-            tools:text="Name is not valid"
-            android:layout_marginTop="5dp"
-            android:fontFamily="@font/poppins_medium"/>
+        </RelativeLayout>
 
-    </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/last_name_section"
-        app:layout_constraintStart_toStartOf="parent"
-        android:orientation="vertical"
-        android:id="@+id/email_section"
-        android:layout_marginTop="5dp">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/text_white"
-            android:textSize="18sp"
-            android:text="@string/email"
-            android:fontFamily="@font/poppins_light"
-            android:id="@+id/email_label"/>
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/background_text_field"
-            android:padding="10dp"
-            android:inputType="textEmailAddress"
-            android:textColor="@color/brand_black"
-            android:id="@+id/email_text_field"
-            android:hint="@null"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/email_error_text"
-            android:textColor="@color/error_red"
-            tools:text="Name is not valid"
-            android:layout_marginTop="5dp"
-            android:fontFamily="@font/poppins_medium"/>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/email_section"
-        app:layout_constraintStart_toStartOf="parent"
-        android:orientation="vertical"
-        android:id="@+id/phone_section"
-        android:layout_marginTop="5dp">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/text_white"
-            android:textSize="18sp"
-            android:text="@string/phone_number"
-            android:fontFamily="@font/poppins_light"
-            android:id="@+id/phone_label"/>
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/background_text_field"
-            android:padding="10dp"
-            android:inputType="phone"
-            android:textColor="@color/brand_black"
-            android:id="@+id/phone_text_field"
-            android:hint="@null"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/phone_error_text"
-            android:textColor="@color/error_red"
-            tools:text="Name is not valid"
-            android:layout_marginTop="5dp"
-            android:fontFamily="@font/poppins_medium"/>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:id="@+id/bottom_section"
-        android:orientation="horizontal"
-        android:layout_marginBottom="30dp">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/text_white"
-            android:textSize="16sp"
-            android:text="@string/already_have_an_account"
-            android:fontFamily="@font/poppins_light"
-            android:id="@+id/dont_have_account"
-            android:layout_marginEnd="2dp"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/brand_yellow"
-            android:textSize="16sp"
-            android:text="@string/sign_in"
-            android:fontFamily="@font/poppins_light"
-            android:id="@+id/sign_in_text" />
-
-    </LinearLayout>
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@id/bottom_section"
-        android:background="@drawable/background_auth_button"
-        android:layout_marginBottom="30dp"
-        android:padding="8dp"
-        android:id="@+id/button_signup">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/sign_up"
-            android:textColor="@color/text_white"
-            android:fontFamily="@font/poppins_bold"
-            android:textSize="18sp"
-            android:visibility="visible"
-            android:id="@+id/signup_button_text"
-            android:layout_centerInParent="true"/>
-
-        <ProgressBar
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:indeterminate="true"
-            android:layout_centerInParent="true"
-            android:visibility="gone"
-            android:indeterminateTintMode="src_atop"
-            android:indeterminateTint="@color/brand_yellow"
-            android:id="@+id/progressBar"/>
-
-    </RelativeLayout>
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

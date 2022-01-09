@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:paddingHorizontal="20dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_cmd"
+            app:tint="@color/brand_black"
+            android:contentDescription="@string/app_name"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/cmd_logo"/>
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            app:riv_oval="true"
+            android:background="@color/brand_yellow"
+            android:layout_below="@id/cmd_logo"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+            android:id="@+id/user_image"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/BrandButton"
+            android:text="Log in"
+            android:layout_below="@id/user_image"
+            android:layout_marginTop="20dp"
+            android:textAllCaps="false"
+            android:fontFamily="@font/poppins_medium"
+            android:id="@+id/login_button"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/BrandButton"
+            android:text="Log In With Another Account"
+            android:layout_below="@id/login_button"
+            android:layout_marginTop="3dp"
+            android:textAllCaps="false"
+            android:fontFamily="@font/poppins_medium"
+            android:id="@+id/login_another_account"/>
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

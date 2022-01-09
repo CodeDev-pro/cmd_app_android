@@ -31,7 +31,7 @@ class EmailValidationFragment : Fragment(R.layout.fragment_email_validation) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         _binding = FragmentEmailValidationBinding.bind(view)
 
-        binding.emailTextField.onChange {
+        /*binding.emailTextField.onChange {
             viewModel.execute(EmailValidationEvents.EmailTextChange(it))
         }
 
@@ -69,7 +69,7 @@ class EmailValidationFragment : Fragment(R.layout.fragment_email_validation) {
                     emailErrorText.handleError(it.error, it.valid)
                 }
             }
-        }
+        }*/
     }
 
     override fun onStart() {
@@ -84,6 +84,7 @@ class EmailValidationFragment : Fragment(R.layout.fragment_email_validation) {
     }
 }
 
+/*
 fun FragmentEmailValidationBinding.loading(context: Context) {
     this.apply {
         buttonResetPassword.isClickable = false
@@ -114,4 +115,4 @@ fun FragmentEmailValidationBinding.error(context: Context) {
         resetPasswordText.visibility = View.VISIBLE
         progressBar.visibility = View.GONE
     }
-}
+}*/

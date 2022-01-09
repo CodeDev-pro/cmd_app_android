@@ -37,7 +37,7 @@ class OtpFragment: Fragment(R.layout.fragment_otp) {
             viewModel.execute(OtpEvents.PostOtp(args.otp!!))
         }
 
-        viewModel.execute(OtpEvents.PostUser(args.user!!))
+        /*viewModel.execute(OtpEvents.PostUser(args.user!!))
 
         binding.resendButton.setOnClickListener {
             viewModel.execute(OtpEvents.GetOtp)
@@ -88,7 +88,7 @@ class OtpFragment: Fragment(R.layout.fragment_otp) {
                     otpError.handleError(it.otp.errorMessage, it.otp.valid)
                 }
             }
-        }
+        }*/
     }
 
     override fun onDestroyView() {
@@ -97,6 +97,7 @@ class OtpFragment: Fragment(R.layout.fragment_otp) {
     }
 }
 
+/*
 fun FragmentOtpBinding.loading(context: Context) {
     this.apply {
         resendButton.isClickable = false
@@ -133,4 +134,4 @@ fun FragmentOtpBinding.error(context: Context) {
         verifyButton.isClickable = true
         verifyButton.background = AppCompatResources.getDrawable(context, R.drawable.background_auth_button)
     }
-}
+}*/
