@@ -53,6 +53,14 @@
         <item name="colorPrimary">@color/brand_yellow</item>
     </style>
 
+    <style name="OutlinedButtonOverlay">
+        <item name="colorPrimary">@color/brand_yellow</item>
+    </style>
+
+    <style name="OutlinedButton" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="materialThemeOverlay">@style/OutlinedButtonOverlay</item>
+    </style>
+
     <style name="BrandButton" parent="Widget.MaterialComponents.Button">
         <item name="materialThemeOverlay">@style/ButtonBrandOverlay</item>
     </style>

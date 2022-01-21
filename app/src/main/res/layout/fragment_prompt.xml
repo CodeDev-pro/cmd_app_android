@@ -46,11 +46,12 @@
         <com.google.android.material.button.MaterialButton
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            style="@style/BrandButton"
+            style="@style/OutlinedButton"
             android:text="Log In With Another Account"
             android:layout_below="@id/login_button"
             android:layout_marginTop="3dp"
             android:textAllCaps="false"
+            android:textColor="@color/brand_black"
             android:fontFamily="@font/poppins_medium"
             android:id="@+id/login_another_account"/>
 
