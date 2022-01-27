@@ -161,7 +161,6 @@
                 android:layout_height="wrap_content"
                 app:layout_constraintTop_toBottomOf="@id/retype_password_layout"
                 android:background="@drawable/background_auth_button"
-                app:layout_constraintBottom_toTopOf=""
                 android:padding="8dp"
                 android:id="@+id/button_signup">
 

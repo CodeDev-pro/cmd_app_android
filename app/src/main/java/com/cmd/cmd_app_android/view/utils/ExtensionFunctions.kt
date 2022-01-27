@@ -1,5 +1,7 @@
 package com.cmd.cmd_app_android.view.utils
 
+import android.animation.Animator
+import android.animation.ObjectAnimator
 import android.annotation.SuppressLint
 import android.app.Activity
 import android.app.Application
@@ -83,3 +85,23 @@ fun View.visible() {
 }
 
 fun View.gone() { this.visibility = View.GONE }
+
+fun ObjectAnimator.animate(action: () -> Unit) {
+    this.addListener(object : Animator.AnimatorListener {
+        override fun onAnimationStart(p0: Animator?) {
+
+        }
+
+        override fun onAnimationEnd(p0: Animator?) {
+            action()
+        }
+
+        override fun onAnimationCancel(p0: Animator?) {
+
+        }
+
+        override fun onAnimationRepeat(p0: Animator?) {
+
+        }
+    })
+}

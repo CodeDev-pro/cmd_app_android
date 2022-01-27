@@ -12,10 +12,11 @@
         android:id="@+id/cmd_logo"
         android:layout_width="230dp"
         android:layout_height="59dp"
-        android:src="@drawable/ic_cmd"
+        app:srcCompat="@drawable/ic_cmd"
         android:transitionName="image_cmd_big"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="@string/app_name" />
 </androidx.constraintlayout.widget.ConstraintLayout>
