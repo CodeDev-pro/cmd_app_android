@@ -29,6 +29,10 @@ class SignInFragment : Fragment(R.layout.fragment_signin) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         _binding = FragmentSigninBinding.bind(view)
 
+        binding.navigateSignUp.setOnClickListener {
+            findNavController().navigate(R.id.action_signInFragment_to_signUpFragment)
+        }
+
         /*viewLifecycleOwner.lifecycleScope.launchWhenStarted {
             viewModel.signInState.collectLatest {
                 if (it.loading) {
